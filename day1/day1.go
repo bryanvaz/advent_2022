@@ -16,14 +16,13 @@ func main() {
 		log.Fatal(f_err)
 	}
 	defer input_file.Close()
+	// read the file line by line using scanner
+	scanner := bufio.NewScanner(input_file)
 
 	var line_counter int = 1
 	var elves int = 1
 	var current_calories int = 0
 	var max_calories = [3]int{0, 0, 0}
-
-	// read the file line by line using scanner
-	scanner := bufio.NewScanner(input_file)
 
 	for scanner.Scan() {
 		line_counter++
